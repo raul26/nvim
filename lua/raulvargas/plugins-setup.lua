@@ -15,8 +15,8 @@ local packer_bootstrap = ensure_packer()
 -- when file is saved
 vim.cmd([[ 
   augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+  autocmd!
+  autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -47,8 +47,14 @@ return packer.startup(function(use)
   use("numToStr/Comment.nvim")
 
   -- file explorer
-  use("preservim/nerdtree")
-  use("ryanoasis/vim-devicons")
+  -- use("ryanoasis/vim-devicons")
+  use({
+    "nvim-tree/nvim-tree.lua",
+    requires = {
+      "nvim-tree/nvim-web-devicons", -- optional, for file icons
+    },
+    tag = "nightly", -- optional, updated every week. (see issue #1193)
+  })
 
   -- statusline
   use("nvim-lualine/lualine.nvim")

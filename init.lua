@@ -4,6 +4,8 @@ require("raulvargas.core.keymaps")
 require("raulvargas.core.colorscheme")
 require("raulvargas.plugins.comment")
 require("raulvargas.plugins.lualine")
+require("raulvargas.plugins.nvim-tree")
+-- adding comment. jeje
 require("raulvargas.plugins.telescope")
 require("raulvargas.plugins.mvim-cmp")
 require("raulvargas.plugins.autopairs")
