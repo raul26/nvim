@@ -2,10 +2,7 @@ vim.g.mapleader = ","
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>")
-
--- Lsp
-keymap.set("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+keymap.set("n", "<leader>gf", ":NvimTreeFindFile<CR>")
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

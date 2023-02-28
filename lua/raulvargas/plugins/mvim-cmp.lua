@@ -35,6 +35,15 @@ cmp.setup({
     ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
     ["<CR>"] = cmp.mapping.confirm({ select = false }),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif cmp.visible() then
+        cmp.confirm({ select = true})
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
   }),
   -- sources for autocompletion
   sources = cmp.config.sources({
