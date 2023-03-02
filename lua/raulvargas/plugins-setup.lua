@@ -58,6 +58,7 @@ return packer.startup(function(use)
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
@@ -103,6 +104,7 @@ return packer.startup(function(use)
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+  use("tpope/vim-fugitive")
 
   if packer_bootstrap then
     require("packer").sync()
