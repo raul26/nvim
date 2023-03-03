@@ -103,7 +103,14 @@ return packer.startup(function(use)
   use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
   -- git integration
-  use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+  -- use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+  -- use("airblade/vim-gitgutter")
+  use {
+    'tanvirtin/vgit.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
   use("tpope/vim-fugitive")
 
   if packer_bootstrap then

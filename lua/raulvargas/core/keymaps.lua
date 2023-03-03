@@ -17,7 +17,11 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 
 -- fugitive commands
-keymap.set("n", "<leader>gitd", ":G diff<cr>") -- list current changes per file with diff preview ["gs" for git status]
-keymap.set("n", "<leader>gitb", ":G blame<cr>") -- list current changes per file with diff preview ["gs" for git status]
-keymap.set("n", "<leader>gitm", ":G mergetool<cr>") -- list current changes per file with diff preview ["gs" for git status]
-keymap.set("n", "<leader>gs", ":G difftool<cr>") -- list current changes per file with diff preview ["gs" for git status]
+-- keymap.set("n", "<leader>gitd", ":GitGutterDiffOrig<cr>")
+keymap.set("n", "<leader>gitb", ":G blame<cr>")
+keymap.set("n", "<leader>gitm", ":G mergetool<cr>")
+keymap.set("n", "<leader>gitd", ":VGit buffer_history_preview<cr>")
+keymap.set("n", "<leader>gs", ":VGit buffer_hunk_preview<cr>")
+keymap.set("n", "<leader>gh", ":VGit buffer_history_preview<cr>")
+keymap.set("n", "[c", ":VGit hunk_up<cr>")
+keymap.set("n", "]c", ":VGit hunk_down<cr>")

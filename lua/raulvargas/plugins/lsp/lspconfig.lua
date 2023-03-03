@@ -83,8 +83,9 @@ lspconfig["tailwindcss"].setup({
   on_attach = on_attach,
 })
 
+local util = require('lspconfig.util')
 lspconfig["angularls"].setup({
-  rootdir = '.angular.json'
+  root_dir = util.root_pattern('.angular.json', 'angular.json')
 })
 
 -- configure emmet language server

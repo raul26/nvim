@@ -5,14 +5,11 @@ require("raulvargas.core.colorscheme")
 require("raulvargas.plugins.comment")
 require("raulvargas.plugins.lualine")
 require("raulvargas.plugins.nvim-tree")
--- adding comment. jeje
 require("raulvargas.plugins.telescope")
 require("raulvargas.plugins.mvim-cmp")
 require("raulvargas.plugins.autopairs")
 require("raulvargas.plugins.treesitter")
-require("raulvargas.plugins.gitsigns")
-require("raulvargas.plugins.bufferline")
---
+require("raulvargas.plugins.vgit")
 -- lsp
 require("raulvargas.plugins.lsp.mason")
 require("raulvargas.plugins.lsp.lspconfig")
