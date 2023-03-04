@@ -10,6 +10,7 @@ require("raulvargas.plugins.mvim-cmp")
 require("raulvargas.plugins.autopairs")
 require("raulvargas.plugins.treesitter")
 require("raulvargas.plugins.vgit")
+require("raulvargas.plugins.bufferline")
 -- lsp
 require("raulvargas.plugins.lsp.mason")
 require("raulvargas.plugins.lsp.lspconfig")
