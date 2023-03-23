@@ -14,7 +14,13 @@ require("nvim-tree").setup({
   filters = {
     custom = {"^\\.git"}
   },
+  actions = {
+    open_file = {
+      resize_window = true
+    }
+  },
   view = {
+    width = 60,
     mappings = {
       list = {
         { key = "i", action = "vsplit" },
@@ -22,4 +28,10 @@ require("nvim-tree").setup({
       },
     },
   },
+  git = {
+    enable = true
+  },
+  diagnostics = {
+    enable = true
+  }
 })

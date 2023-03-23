@@ -4,6 +4,10 @@ local keymap = vim.keymap
 keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>")
 keymap.set("n", "<leader>gf", ":NvimTreeFindFile<CR>")
 
+keymap.set("n", "<S-l>", ":bnext<CR>")
+keymap.set("n", "<S-h>", ":bprevious<CR>")
+keymap.set("n", "<leader>q", ":bp<bar>sp<bar>bn<bar>bd<CR>")
+
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
@@ -23,6 +27,7 @@ keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git bra
 keymap.set("n", "<leader>gitb", ":G blame<cr>")
 keymap.set("n", "<leader>gitm", ":G mergetool<cr>")
 keymap.set("n", "<leader>gitd", ":VGit buffer_history_preview<cr>")
+keymap.set("n", "<leader>gits", ":VGit project_diff_preview<cr>")
 keymap.set("n", "<leader>gs", ":VGit buffer_hunk_preview<cr>")
 keymap.set("n", "<leader>gh", ":VGit buffer_history_preview<cr>")
 keymap.set("n", "[c", ":VGit hunk_up<cr>")
