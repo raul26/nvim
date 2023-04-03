@@ -2,7 +2,7 @@ local setup, bufferline = pcall(require, "bufferline")
 if not setup then
   return
 end
-require('bufferline').setup {
+bufferline.setup {
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
     numbers = "none", --[[ | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string, ]]
