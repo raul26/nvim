@@ -102,6 +102,31 @@ return packer.startup(function(use)
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
   use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
+  -- Debugging
+  use {
+    "mfussenegger/nvim-dap",
+    opt = true,
+    event = "BufReadPre",
+    module = { "dap" },
+    wants = { "nvim-dap-virtual-text", "DAPInstall.nvim", "nvim-dap-ui" },
+    requires = {
+      "Pocco81/DAPInstall.nvim",
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+      "nvim-telescope/telescope-dap.nvim",
+      { "jbyuki/one-small-step-for-vimkind", module = "osv" },
+    },
+    -- config = function()
+    --   require("config.dap").setup()
+    -- end,
+  }
+
+  -- Flutter
+  use {
+    "akinsho/flutter-tools.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
+
   -- git integration
   -- use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
   -- use("airblade/vim-gitgutter")

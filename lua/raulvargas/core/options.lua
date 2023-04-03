@@ -18,6 +18,10 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
 
+-- folds
+opt.foldmethod = "indent"
+opt.foldlevel = 99
+
 -- appearance
 
 -- turn on termguicolors for nightfly colorscheme to work
@@ -37,3 +41,4 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
+opt.autoread = true -- autoread files when they change
