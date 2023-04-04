@@ -22,6 +22,11 @@ opt.cursorline = true -- highlight the current cursor line
 opt.foldmethod = "indent"
 opt.foldlevel = 99
 
+-- VGit default configs
+vim.o.updatetime = 300
+vim.o.incsearch = false
+vim.wo.signcolumn = 'yes'
+
 -- appearance
 
 -- turn on termguicolors for nightfly colorscheme to work
