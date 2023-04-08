@@ -136,6 +136,7 @@ return packer.startup(function(use)
       'nvim-lua/plenary.nvim'
     }
   }
+
   use("tpope/vim-fugitive")
 
   if packer_bootstrap then
