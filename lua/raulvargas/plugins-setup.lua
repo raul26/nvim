@@ -56,6 +56,14 @@ return packer.startup(function(use)
     tag = "nightly", -- optional, updated every week. (see issue #1193)
   })
 
+  use {
+    'antosha417/nvim-lsp-file-operations',
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-tree.lua",
+    }
+  }
+
   -- statusline
   use("nvim-lualine/lualine.nvim")
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}

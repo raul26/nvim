@@ -29,7 +29,7 @@ local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
   -- set keybinds
-  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
+  keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
   keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
   keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts) -- see definition and make edits in window
   keymap.set("n", "pd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
@@ -41,15 +41,32 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
   keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
   keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
-  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
+  keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
+  keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts) -- format with lsp 
+  keymap.set("v", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts) -- format with lsp 
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   if client.name == "tsserver" then
+    client.server_capabilities.document_formatting = false;
     keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
     keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
     keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
   end
+  if client.name == "html" then
+    client.server_capabilities.document_formatting = false;
+  end
+  if client.name == "typescript" then
+    client.server_capabilities.document_formatting = false;
+  end
+  if client.name == "cssls" then
+    client.server_capabilities.document_formatting = false;
+  end
+  -- if client.supports_method("textDocument/rangeFormatting") then
+  --   vim.keymap.set("x", "<Leader>f", function()
+  --     vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+  --   end, { buffer = bufnr, desc = "[lsp] format" })
+  -- end
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
@@ -109,10 +126,10 @@ lspconfig["cssls"].setup({
 })
 
 -- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
+-- lspconfig["tailwindcss"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
 
 local util = require('lspconfig.util')
 lspconfig["angularls"].setup({
