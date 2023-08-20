@@ -23,9 +23,14 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 
 -- fugitive commands
--- keymap.set("n", "<leader>gitd", ":GitGutterDiffOrig<cr>")
 keymap.set("n", "<leader>gitb", ":G blame<cr>")
 keymap.set("n", "<leader>gitm", ":G mergetool<cr>")
+-- conflict handing
+keymap.set("n", "<leader>mc", ":Gdiffsplit!<cr>")
+keymap.set("n", "<leader>mgl", ":diffget //2<cr>")
+keymap.set("n", "<leader>mgr", ":diffget //3<cr>")
+
+-- Vgit commands
 keymap.set("n", "<leader>gitd", ":VGit buffer_history_preview<cr>")
 keymap.set("n", "<leader>gits", ":VGit project_diff_preview<cr>")
 keymap.set("n", "<leader>gs", ":VGit buffer_hunk_preview<cr>")

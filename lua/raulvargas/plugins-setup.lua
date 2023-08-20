@@ -146,6 +146,7 @@ return packer.startup(function(use)
   }
 
   use("tpope/vim-fugitive")
+  use('NvChad/nvim-colorizer.lua')
 
   if packer_bootstrap then
     require("packer").sync()

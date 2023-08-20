@@ -45,6 +45,7 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
   keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts) -- format with lsp 
   keymap.set("v", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts) -- format with lsp 
+  keymap.set("n", "<space>a", "<cmd>lua vim.lsp.buf.code_action()<CR>") --imports 
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   if client.name == "tsserver" then
@@ -59,9 +60,9 @@ local on_attach = function(client, bufnr)
   if client.name == "typescript" then
     client.server_capabilities.document_formatting = false;
   end
-  if client.name == "cssls" then
-    client.server_capabilities.document_formatting = false;
-  end
+  -- if client.name == "cssls" then
+  --   client.server_capabilities.document_formatting = false;
+  -- end
   -- if client.supports_method("textDocument/rangeFormatting") then
   --   vim.keymap.set("x", "<Leader>f", function()
   --     vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })

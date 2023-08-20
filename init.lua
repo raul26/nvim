@@ -11,6 +11,7 @@ require("raulvargas.plugins.autopairs")
 require("raulvargas.plugins.treesitter")
 require("raulvargas.plugins.vgit")
 require("raulvargas.plugins.bufferline")
+require("raulvargas.plugins.nvim-colorizer")
 -- lsp
 require("raulvargas.plugins.lsp.mason")
 require("raulvargas.plugins.lsp.lspconfig")
